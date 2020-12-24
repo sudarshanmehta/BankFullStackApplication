@@ -1,0 +1,55 @@
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel [expanded]="false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       <B>Accounts</B>
+      </mat-panel-title>
+      <mat-panel-description>
+        All Accounts Information
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="Id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.accountId}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Acc No.">
+    <th mat-header-cell *matHeaderCellDef> Acc No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.accountNumber}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="Curr Bal">
+    <th mat-header-cell *matHeaderCellDef> Curr Bal</th>
+    <td mat-cell *matCellDef="let element"> {{element.currentBalance}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Acc Type">
+    <th mat-header-cell *matHeaderCellDef> Acc Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.accountType}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Curr Lmt">
+    <th mat-header-cell *matHeaderCellDef> Curr Lmt </th>
+    <td mat-cell *matCellDef="let element"> {{element.currentLimit}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+</table>
+<mat-paginator [pageSizeOptions]="[4, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+</mat-expansion-panel>
+</mat-accordion>

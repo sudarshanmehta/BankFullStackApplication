@@ -1,0 +1,11 @@
+{
+    "/server": {
+       "target": "http://bankingappbe-dev.eba-mit897gc.ap-south-1.elasticbeanstalk.com",
+       "secure": false,
+       "changeOrigin": true,
+       "logLevel": "info",
+       "pathRewrite" : {
+           "^/server" : ""
+       }
+    }
+  }
